@@ -56,7 +56,15 @@ public class StudentManager {
         if (flag==false){
             System.out.println("Student not found");
         }
-
+    }
+    public void searchByPosition(){
+        System.out.print("Enter Position (Index) to search: ");
+        int index=scanner.nextInt();
+        if (index >= 0 && index < students.size()) {
+            students.get(index).display();
+        } else {
+            System.out.println("Invalid index.");
+        }
     }
 
 }
