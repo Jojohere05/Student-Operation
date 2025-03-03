@@ -27,6 +27,18 @@ public class StudentManager {
         students.add(new Student(prn,name,dob.format(formatter),marks));
         System.out.println("Student added successfully!");
     }
+    public void display(){
+        if (students.isEmpty()){
+            System.out.println("No student found!!");
+        }
+        else{
+            System.out.println("the list of students are \n");
+            for (Student student:students){
+                student.display();
+                System.out.println("\n");
+            }
+        }
+    }
     public void searchByPrn(){
         System.out.print("Enter PRN to search: ");
         String prn = scanner.next();
