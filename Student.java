@@ -23,4 +23,7 @@ public class Student {
     public LocalDate getDob(){
         return dob;
     }
+    public double getMarks() {
+        return marks;
+    }
 }
