@@ -42,5 +42,21 @@ public class StudentManager {
             System.out.println("Student not found");
         }
     }
+    public void searchByName(){
+        System.out.println("enter name to be searched");
+        String name=scanner.nextLine();
+        boolean flag=false;
+        for (Student student:students){
+            if (student.getName().equalsIgnoreCase(name)){
+                flag=true;
+                student.display();
+                return;
+            }
+        }
+        if (flag==false){
+            System.out.println("Student not found");
+        }
+
+    }
 
 }
