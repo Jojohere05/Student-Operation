@@ -26,4 +26,8 @@ public class Student {
     public double getMarks() {
         return marks;
     }
+    public void setName(String name) {
+        this.name = name;
+    }
+
 }
