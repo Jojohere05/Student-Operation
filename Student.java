@@ -29,5 +29,8 @@ public class Student {
     public void setName(String name) {
         this.name = name;
     }
+    public void setprn(String name) {
+        this.name = prn;
+    }
 
 }
