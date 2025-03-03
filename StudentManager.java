@@ -78,5 +78,37 @@ public class StudentManager {
             System.out.println("Invalid index.");
         }
     }
+    public void updateStudentInfo(){
+        System.out.print("Enter PRN of student to update: ");
+        String prn = scanner.next();
+        boolean flag=false;
+        for (Student student:students){
+            if (student.getPrn().equalsIgnoreCase(prn)){
+                System.out.println("enter new name");
+                String name=scanner.nextLine();
+                student.setName(name);
+                System.out.println("enter date of birth change");
+                LocalDate newDob = null;
+                while (newDob == null) {
+                    try {
+                        String dobInput = scanner.next();
+                        newDob = LocalDate.parse(dobInput, formatter);
+                        student.setDob(dobInput);
+                    } catch (DateTimeParseException e) {
+                        System.out.println("Invalid date format! Please enter in DD/MM/YYYY format.");
+                    }
+                }
+                System.out.println("enterthe new marks");
+                double marks=scanner.nextDouble()
+                student.setMarks(marks);
+                System.out.println("Student details updated successfully.");
+                student.display();
+            }
+        }
+       
+        if (flag==false){
+            System.out.println("Student not found");
+        }
+    }
 
 }
