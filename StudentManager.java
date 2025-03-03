@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Iterator;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
@@ -109,6 +110,21 @@ public class StudentManager {
         if (flag==false){
             System.out.println("Student not found");
         }
+    }
+    public void deleteStudent() {
+        System.out.print("Enter PRN of student to delete: ");
+        String prn = scanner.next();
+
+        Iterator<Student> iterator = students.iterator();
+        while (iterator.hasNext()) {
+            Student student = iterator.next();
+            if (student.getPrn().equalsIgnoreCase(prn)) {
+                iterator.remove();
+                System.out.println("Student deleted successfully.");
+                return;
+            }
+        }
+        System.out.println("Student not found.");
     }
 
 }
