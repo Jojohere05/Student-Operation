@@ -6,6 +6,7 @@ import java.time.format.DateTimeParseException;
 public class StudentManager {
     private ArrayList<Student> students;
     private Scanner scanner ;
+    private static final DateTimeFormatter formatter=DateTimeFormatter.ofPattern("dd/MM/yyyy");
     public StudentManager() {
     students=new ArrayList<>();
     scanner=new Scanner(System.in);
