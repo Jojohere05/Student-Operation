@@ -38,4 +38,7 @@ public class Student {
     public void setMarks(double marks) {
         this.marks = marks;
     }
+    public void display(){
+        System.out.println("Prn:"+prn+" ,Name" +name+" ,Date of Birth"+dob.format(formatter)+" ,Marks"+marks);
+    }
 }
