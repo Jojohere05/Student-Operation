@@ -23,20 +23,27 @@ public class Main {
             switch(choice){
                 case 1:
                     manager.addStudent();
+                    break;
                 case 2:
                     manager.display();
+                    break;
                 case 3:
                     manager.searchByPrn();
+                    break;
                 case 4:
                     manager.searchByName();
+                    break;
                 case 5:
                     manager.searchByPosition();
+                    break;
                 case 6:
                     manager.updateStudentInfo();
+                    break;
                 case 7:
                     manager.deleteStudent();
+                    break;
                 default:
-                    System.out.println("invalid choice");
+                    System.out.println("Thankyou!!!");
             }
         } while (choice != 0);
         scanner.close(); 

@@ -39,6 +39,6 @@ public class Student {
         this.marks = marks;
     }
     public void display(){
-        System.out.println("Prn:"+prn+" ,Name" +name+" ,Date of Birth"+dob.format(formatter)+" ,Marks"+marks);
+        System.out.println("Prn:"+prn+" ,Name: " +name+" ,Date of Birth: "+dob.format(formatter)+" ,Marks: "+marks);
     }
 }

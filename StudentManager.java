@@ -15,15 +15,15 @@ public class StudentManager {
     public void addStudent() {
         System.out.print("Enter PRN: ");
         String prn=scanner.next();
-    
+        scanner.nextLine(); 
         System.out.print("Enter name: ");
         String name=scanner.nextLine();
 
         System.out.print("Enter Date of Birth (DD/MM/YYYY): ");
         String dobInput = scanner.next();
         LocalDate dob = LocalDate.parse(dobInput, formatter);
-
-        System.out.print("Enter name: ");
+        scanner.nextLine();
+        System.out.print("Enter marks: ");
         double marks=scanner.nextDouble();
         students.add(new Student(prn,name,dob.format(formatter),marks));
         System.out.println("Student added successfully!");
@@ -82,11 +82,12 @@ public class StudentManager {
     public void updateStudentInfo(){
         System.out.print("Enter PRN of student to update: ");
         String prn = scanner.next();
+        scanner.nextLine();
         boolean flag=false;
         for (Student student:students){
             if (student.getPrn().equalsIgnoreCase(prn)){
-                System.out.println("enter new name");
-                String name=scanner.nextLine();
+                System.out.print("Enter new Name: ");
+                String name = scanner.nextLine(); 
                 student.setName(name);
                 System.out.println("enter date of birth change");
                 LocalDate newDob = null;
@@ -97,13 +98,15 @@ public class StudentManager {
                         student.setDob(dobInput);
                     } catch (DateTimeParseException e) {
                         System.out.println("Invalid date format! Please enter in DD/MM/YYYY format.");
+                        scanner.nextLine();
                     }
                 }
                 System.out.println("enterthe new marks");
-                double marks=scanner.nextDouble()
+                double marks=scanner.nextDouble();
                 student.setMarks(marks);
                 System.out.println("Student details updated successfully.");
                 student.display();
+                break;
             }
         }
        
