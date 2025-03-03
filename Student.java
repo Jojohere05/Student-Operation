@@ -1,14 +1,17 @@
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 public class Student {
     //defining variable
     private String prn;
     private String name;
-    private String dob;
+    private LocalDate dob;
     private double marks;
+    private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
     //constructor
     public Student(String prn,String name,String dob,double marks){
         this.prn=prn;
         this.name=name;
-        this.dob=dob;
+        this.dob=LocalDate.parse(dob, formatter);
         this.marks=marks;
     }
     public String getPrn(){
@@ -16,5 +19,8 @@ public class Student {
     }
     public String getName(){
         return name;
+    }
+    public LocalDate getDob(){
+        return dob;
     }
 }
