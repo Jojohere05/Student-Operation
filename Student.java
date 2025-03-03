@@ -32,5 +32,8 @@ public class Student {
     public void setprn(String name) {
         this.name = prn;
     }
+    public void setDob(String dob) { 
+        this.dob = LocalDate.parse(dob, formatter); 
+    }
 
 }
