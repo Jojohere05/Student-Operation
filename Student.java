@@ -35,5 +35,7 @@ public class Student {
     public void setDob(String dob) { 
         this.dob = LocalDate.parse(dob, formatter); 
     }
-
+    public void setMarks(double marks) {
+        this.marks = marks;
+    }
 }
